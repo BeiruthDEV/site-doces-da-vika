@@ -12,7 +12,7 @@ export const especialidades = [
     id: 1,
     title: 'Bolos Esculturais',
     description: 'Obras de arte comestíveis. Design impecável em pasta americana e buttercream para casamentos e 15 anos.',
-    image: 'https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&q=80&w=800',
+    image: '/images/flores-casamento.jpg',
     link: 'https://wa.me/5521000000000',
     linkText: 'Solicitar Orçamento',
   },
@@ -20,7 +20,7 @@ export const especialidades = [
     id: 2,
     title: 'Doces Finos',
     description: 'A joalheria da confeitaria. Brigadeiros belga, camafeus e trufas decoradas que elevam a mesa do seu evento.',
-    image: 'https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&q=80&w=800',
+    image: '/images/brownie-1.png',
     link: 'https://wa.me/5521000000000',
     linkText: 'Ver Tabela de Preços',
   },
@@ -28,38 +28,38 @@ export const especialidades = [
     id: 3,
     title: 'Festas Infantis',
     description: 'Modelagens 3D perfeitas para transportar as crianças para dentro do seu tema favorito com muito sabor.',
-    image: 'https://images.unsplash.com/photo-1557925923-33b251dc32a6?auto=format&fit=crop&q=80&w=800',
+    image: '/images/tema-sonic.jpg',
     link: '/galeria',
     linkText: 'Ver Temas',
   },
 ];
 
 export const galleryImages = [
-  'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&q=80&w=600',
-  'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&q=80&w=600',
-  'https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&q=80&w=600',
+  '/images/flores-casamento.jpg',
+  '/images/tema-sonic.jpg',
+  '/images/brownie-1.png',
+  '/images/brownie-2.jpg',
   'https://images.unsplash.com/photo-1499638472904-ea5c6178a592?auto=format&fit=crop&q=80&w=600',
 ];
 
 export const themeGallery = [
   {
     id: 1,
-    title: 'Mickey Mouse',
+    title: 'Tema Sonic',
     description: 'A magia clássica em cada detalhe',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAB-R3231-JH5rhVSh7oduvFhQwBlNBelYWYaYjxFz76gcMLXCuPawKjxn1wD5pl0cdLy15Axu0bmoIjlkj7oYrUgtY0MY9ukrZaM-JqBFQmBvnElLcsZDaemDq1snYnl26-4q9-9dtGsPIiwaScKgaiBf75lESUpoHqCOw_rqTcFN2CNAxIVMppgKaieI2TYtVgnJ1gaHtvhssZZUyj2l5hq29Ng0mH10KF5bklmMOorlk4eI4Rh4_-hLPV-4ymqaXNv4LghZfBqUv',
+    image: '/images/tema-sonic.jpg',
   },
   {
     id: 2,
     title: 'Frozen II',
     description: 'A magia clássica em cada detalhe',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCouweNDYEd3315kp0yzgO8gWZC22ufzTbwLb_4JW8TzMEiOUVHXHDCE4Ov-HC-xhc29OodmyHHZetiJ7fghRuDvKrK7p7QM5S9wSHLqRkyLgJAAM9ikxN29So7LwdJTxlx9fT3pUovnhxsW6K0BLH2lXZCcbphbs_ZRzgpZQqk4vrcXd6rmy-sYsR40uy-aubjmBD4fR-zBRW6HIa9deVWgB6Nb8jYOKgTuTVE9LqYprwW3jGRztSkHsrppz8p-5Yo6lUOTUG27r6Q',
+    image: '/images/flores-casamento.jpg',
   },
   {
     id: 3,
     title: 'Barbie',
     description: 'A magia clássica em cada detalhe',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCNUX3wBEg3A1R1RfhvDZsIljGGyGON8N5mgi3I6drZa7uUU9l_t-l_CNeyw_fzLevv2Y_JdUuipwy0tnp2TfymZ4rEsvaGRnAxmgs_1W-gCR9NXDow8QpRzvhNPbkjzXa7wdlhZHo81k93bZqu58l73-BNOaed1bvz-GsmDwjjb-TCkunHBQ1iUOclnQaYJavNxNu8braRfTfy7yUrmBQ3UKQI9a-gBicpM1HLhwDvDd2-S3dOluFvYUZux9UNXeoZaUH0MPpROp5h',
+    image: '/images/brownie-1.png',
   },
   {
     id: 4,

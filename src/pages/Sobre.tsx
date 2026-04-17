@@ -36,8 +36,8 @@ export const Sobre = () => {
             >
               <img 
                 className="w-full h-full object-cover" 
-                alt="Viviane working with dough" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAiGDeK2pHNpyhIbXt3m2MhgPHdAZZxemRf-xjnUzZ30GlLI860f3vhntIgxhHjQ21SIAuFatsxs3Glc0LmZs5BJHSFVWEspsKNI3lpXWwWKyftpOWguRcpqKpTr8kCL3vcCPYzUJ1Q9zgH6JYcTJTZq4H5AqIHuyJiByUl8lwD5H9vEuLa9uWoCwMB21oiUJer2mSap5vhZkzTa2KORdQPHumC4iHjDHDfpX8SE1bZW1UiArqS9Zxn_iHJx-mgRwLQvB3t4m3EnOM" 
+                alt="Viviane Beiruth banner de apresentação" 
+                src="/images/sobre-viviane.png" 
               />
             </motion.div>
             <motion.div 
@@ -48,8 +48,8 @@ export const Sobre = () => {
             >
               <img 
                 className="w-full h-full object-cover" 
-                alt="Detailed wedding cake" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAORyhFoTg51cIcpc0fRhok8yifPyJxTR5By8RQZ5C67gjOK9-tGfSI35owtjwzmhKxp4r5L8GVar4yEXVNVJaTJVdneFOMFizIg0MOKG8NvMONAYCwmM5aBVGzFiiGTMdJv_gi1vXNXqYxI_5UdrLhUJmLlsTRNf22QN766ist5qVdBRwMjlUb_zNPFYflibRImSRwVo262sxc6CvlWoPNWa1T0Gz9pK_8-6MFmF7FMeLM4T1BwgqsSLxXEmBGArClmvWXaHi-0UfY" 
+                alt="Doces finos em fita rosa" 
+                src="/images/brownie-2.jpg" 
               />
             </motion.div>
           </div>
