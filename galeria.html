@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Plus+Jakarta_Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#faf9f6",
+                        "surface-container-low": "#f4f4f0",
+                        "on-background": "#303330",
+                        "tertiary-fixed": "#ffffff",
+                        "secondary-dim": "#395765",
+                        "surface-container-highest": "#e1e3de",
+                        "on-primary-fixed": "#401517",
+                        "on-primary": "#fff7f6",
+                        "surface-tint": "#884f50",
+                        "outline": "#797b78",
+                        "primary": "#884f50",
+                        "on-secondary-fixed-variant": "#41606e",
+                        "inverse-primary": "#f0a9a9",
+                        "on-primary-container": "#5a2a2b",
+                        "error-dim": "#791903",
+                        "tertiary": "#605f5b",
+                        "on-surface-variant": "#5d605c",
+                        "surface-container-high": "#e7e9e4",
+                        "outline-variant": "#b0b3ae",
+                        "secondary-container": "#c7e7f8",
+                        "secondary-fixed-dim": "#b9d9ea",
+                        "on-tertiary": "#fcf8f3",
+                        "error-container": "#fd795a",
+                        "on-secondary-container": "#375663",
+                        "secondary": "#456371",
+                        "surface-dim": "#d9dbd6",
+                        "on-secondary": "#f2faff",
+                        "primary-dim": "#7a4445",
+                        "background": "#faf9f6",
+                        "tertiary-container": "#ffffff",
+                        "on-primary-fixed-variant": "#653334",
+                        "tertiary-dim": "#54534f",
+                        "inverse-on-surface": "#9d9d9a",
+                        "surface-container": "#eeeeea",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#303330",
+                        "secondary-fixed": "#c7e7f8",
+                        "on-tertiary-container": "#64625e",
+                        "primary-fixed": "#f0a9a9",
+                        "on-error-container": "#6e1400",
+                        "primary-container": "#f0a9a9",
+                        "tertiary-fixed-dim": "#f4f0eb",
+                        "on-error": "#fff7f6",
+                        "primary-fixed-dim": "#e19c9c",
+                        "surface-bright": "#faf9f6",
+                        "on-tertiary-fixed-variant": "#6f6d69",
+                        "inverse-surface": "#0d0f0d",
+                        "on-tertiary-fixed": "#51504d",
+                        "surface-variant": "#e1e3de",
+                        "on-secondary-fixed": "#244350",
+                        "error": "#a73b21"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .serif-headline { font-family: 'Noto Serif', serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-lg shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-12 py-6 max-w-screen-2xl mx-auto">
+<span class="font-['Noto_Serif'] text-2xl italic font-bold text-[#884f50] dark:text-[#f0a9a9]">Doces da Vika</span>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-['Noto_Serif'] text-lg font-medium tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#884f50] transition-colors" href="#">Início</a>
+<a class="font-['Noto_Serif'] text-lg font-medium tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#884f50] transition-colors" href="#">Sobre Mim</a>
+<a class="font-['Noto_Serif'] text-lg font-medium tracking-tight text-[#884f50] dark:text-[#f0a9a9] border-b-2 border-[#884f50] pb-1" href="#">Galeria de Temas</a>
+<a class="font-['Noto_Serif'] text-lg font-medium tracking-tight text-stone-500 dark:text-stone-400 hover:text-[#884f50] transition-colors" href="#">Contato</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-[#884f50] dark:text-[#f0a9a9] transition-transform scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Page Header -->
+<header class="px-12 mb-20 text-center">
+<h1 class="serif-headline text-5xl md:text-6xl text-primary font-bold mb-4">Galeria de Temas</h1>
+<p class="font-body text-stone-500 tracking-wide uppercase text-sm">A doçura transformada em arte para seus momentos especiais</p>
+</header>
+<!-- Theme Grid -->
+<section class="px-12 max-w-screen-2xl mx-auto mb-32">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+<!-- Theme 1: Mickey Mouse -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden rounded-lg mb-6 bg-surface-dim">
+<img alt="Mickey Mouse themed cake" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Elegant artisanal tiered cake with minimalist Mickey Mouse ears silhouette and soft red velvet accents in a bright studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB-R3231-JH5rhVSh7oduvFhQwBlNBelYWYaYjxFz76gcMLXCuPawKjxn1wD5pl0cdLy15Axu0bmoIjlkj7oYrUgtY0MY9ukrZaM-JqBFQmBvnElLcsZDaemDq1snYnl26-4q9-9dtGsPIiwaScKgaiBf75lESUpoHqCOw_rqTcFN2CNAxIVMppgKaieI2TYtVgnJ1gaHtvhssZZUyj2l5hq29Ng0mH10KF5bklmMOorlk4eI4Rh4_-hLPV-4ymqaXNv4LghZfBqUv"/>
+</div>
+<h3 class="serif-headline text-2xl text-on-surface mb-2">Mickey Mouse</h3>
+<p class="text-stone-500 italic font-light">A magia clássica em cada detalhe</p>
+</div>
+<!-- Theme 2: Frozen II -->
+<div class="group cursor-pointer lg:mt-12">
+<div class="aspect-[4/5] overflow-hidden rounded-lg mb-6 bg-surface-dim">
+<img alt="Frozen II themed desserts" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Exquisite light blue macarons and crystal sugar treats with snowflake details and frosted sugar textures, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCouweNDYEd3315kp0yzgO8gWZC22ufzTbwLb_4JW8TzMEiOUVHXHDCE4Ov-HC-xhc29OodmyHHZetiJ7fghRuDvKrK7p7QM5S9wSHLqRkyLgJAAM9ikxN29So7LwdJTxlx9fT3pUovnhxsW6K0BLH2lXZCcbphbs_ZRzgpZQqk4vrcXd6rmy-sYsR40uy-aubjmBD4fR-zBRW6HIa9deVWgB6Nb8jYOKgTuTVE9LqYprwW3jGRztSkHsrppz8p-5Yo6lUOTUG27r6Q"/>
+</div>
+<h3 class="serif-headline text-2xl text-on-surface mb-2">Frozen II</h3>
+<p class="text-stone-500 italic font-light">A magia clássica em cada detalhe</p>
+</div>
+<!-- Theme 3: Barbie -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden rounded-lg mb-6 bg-surface-dim">
+<img alt="Barbie themed cake" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Sophisticated pink ombre cake with delicate sugar flowers and gold leaf accents, elegant editorial style pastry photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNUX3wBEg3A1R1RfhvDZsIljGGyGON8N5mgi3I6drZa7uUU9l_t-l_CNeyw_fzLevv2Y_JdUuipwy0tnp2TfymZ4rEsvaGRnAxmgs_1W-gCR9NXDow8QpRzvhNPbkjzXa7wdlhZHo81k93bZqu58l73-BNOaed1bvz-GsmDwjjb-TCkunHBQ1iUOclnQaYJavNxNu8braRfTfy7yUrmBQ3UKQI9a-gBicpM1HLhwDvDd2-S3dOluFvYUZux9UNXeoZaUH0MPpROp5h"/>
+</div>
+<h3 class="serif-headline text-2xl text-on-surface mb-2">Barbie</h3>
+<p class="text-stone-500 italic font-light">A magia clássica em cada detalhe</p>
+</div>
+<!-- Theme 4: Circo -->
+<div class="group cursor-pointer lg:-mt-12">
+<div class="aspect-[4/5] overflow-hidden rounded-lg mb-6 bg-surface-dim">
+<img alt="Circo themed sweets" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Whimsical dessert table with pastel striped cupcakes and miniature fondant animals, soft natural window light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTIFb44kJs-Ef9oxzrZco3YBgADSS578Fhqe89dgLotFaGOdHrBmATMr8qp7MA7gjiat21lWT2CUe6QDHLQXzPlSi6pmfpUMqSMcvx7HtVJRVbPPkLR9PypGLEgNz5gnkInL8GDwJU2OSDgkWdWEOHugu16FMe9Vi58oo89FC8c-lc5s3UuEiUs7_HT9sV7NP92b-GgCUMtAoRim82KozWw_Q6Vqq9grEjB-8vKK6eHkLrr_OiHYf6JGKnEPWrnuFvIR9E6iufUApy"/>
+</div>
+<h3 class="serif-headline text-2xl text-on-surface mb-2">Circo</h3>
+<p class="text-stone-500 italic font-light">A magia clássica em cada detalhe</p>
+</div>
+<!-- Theme 5: Patrulha Canina -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] overflow-hidden rounded-lg mb-6 bg-surface-dim">
+<img alt="Patrulha Canina themed party" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Colorful playful cake with clean primary color palette and artistic paw print textures in edible paint style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk2oKQ2CMrojpzjGWgH4LYhoGPlpsVvqEBj5NRhN2U8JzeR3RzVv0_SfnPaw9vcAKZa3CXK20nh7r4hlGwUYZsufcaBoe_14rr-ErMHghEgJoVUbbEYD2MZqciQOFlTnu4ltMqdz229S3_Ci4iQe6-6IZf_gzPDFjcGX_p6jCb8mWGRHPWsGyMbl3sT81q4pj2pxF04RXZeZ7sWPYnYWEFph-pDmi21NEwTQ-ATxd3ypFsVhJbY2Avvs5ni-9fcbx8heDRWlGh02Sm"/>
+</div>
+<h3 class="serif-headline text-2xl text-on-surface mb-2">Patrulha Canina</h3>
+<p class="text-stone-500 italic font-light">A magia clássica em cada detalhe</p>
+</div>
+<!-- Theme 6: Vasco da Gama -->
+<div class="group cursor-pointer lg:mt-12">
+<div class="aspect-[4/5] overflow-hidden rounded-lg mb-6 bg-surface-dim">
+<img alt="Vasco da Gama themed sweets" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist black and white tiered cake with elegant red cross detail and sharp architectural lines, premium aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJYeEPCwwRXqhWLgxkvJD1ZOXVGsevMy6pX2Rx6zjx9-XGm0_hQIQ-jt0WzxuRdjHfJXq4t8D95So4Qywp5eRoPBtvoHyLUd6aeBU63eBKvT0IGwI5odWS3_1hlBs5CMB5-ugSuhbiPpzNJXo1Mwhc49HY6cpbEO5IKOAz2b3RJ97cvpM-1hzEZi-aZudbOCF7SbfdsShS6RPSJG2P1pHzWDS8GNdtk1xYwgMn0Nq-Ce27-kJ8jWhIdCW2AZ3Ve3EErTy37P6_AQgA"/>
+</div>
+<h3 class="serif-headline text-2xl text-on-surface mb-2">Vasco da Gama</h3>
+<p class="text-stone-500 italic font-light">A magia clássica em cada detalhe</p>
+</div>
+</div>
+</section>
+<!-- Behind the Scenes Section -->
+<section class="bg-surface-container-low py-32">
+<div class="px-12 max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div>
+<span class="label-md tracking-widest text-primary mb-4 block">PROCESSOS</span>
+<h2 class="serif-headline text-4xl md:text-5xl text-on-surface mb-8">Bastidores: A Alma do Nosso Atelier</h2>
+<p class="text-stone-600 leading-relaxed text-lg mb-12 max-w-lg">
+                            Cada doce é uma jornada. Desde a seleção da farinha mais fina até o toque final com a pasta de açúcar, nosso processo é puramente artesanal e feito com paciência.
+                        </p>
+<div class="space-y-8">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="brush">brush</span>
+<div>
+<h4 class="font-bold text-on-surface">Escultura Manual</h4>
+<p class="text-stone-500 text-sm">Personagens modelados um a um, garantindo exclusividade total.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant">restaurant</span>
+<div>
+<h4 class="font-bold text-on-surface">Ingredientes Nobres</h4>
+<p class="text-stone-500 text-sm">Chocolate belga e pastas italianas para um paladar inesquecível.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<div class="rounded-xl overflow-hidden shadow-sm">
+<img alt="Hands modeling sugar paste" class="w-full aspect-square object-cover" data-alt="Close-up of artisan hands delicately sculpting pink sugar paste with professional tools on a clean white marble surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI1edErZZBK8cjNwTdn5AZLsgTijq6xYv8dYGhs0u7ky9Y88fdEDerxtnz9q_-pGMGtDUDfeldtVPiHAcn_KSuf4MZW8rusVRqN9VpNOcyibjlvjaS9t4ZmNJcSM1oTBImevIY9u2cl58qMfFsxuLIP3Fouoj0MctZstfXKQPiejNrnaYQH_GOuudPwnW2vJi4A80OCHxTrqxwJZ4_CGxNWR82GfCBKRgH76-QSwQhzydO1Qnga3XPM5DKAZDH8gSTSaW3y_jHsE6J"/>
+</div>
+<div class="rounded-xl overflow-hidden shadow-sm">
+<img alt="Studio details" class="w-full aspect-[3/4] object-cover" data-alt="Aesthetic layout of pastry tools, rolling pins, and bowls of pastel-colored frosting in a bright, sunlit kitchen atelier" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT5Wca0basf0xaH26_LTadCqzssryF8GQZ5HNWHZNlF4czvgkLjvVwygryu9rEA97rpNsy-LVme2hH9r6XbPxlxTCLu_zQBPZbaNszFy4wYpLUDM9oadQCMat9-wJkLVk3oHtC0ovU9Fb1CAWjD2-JO8deHwzoLy1J__2b1UR_S0t-3K3auzwzMZKH_JzjUHnbbNf1RxOz4plyWAlt6yca1Oh0iAU8aKYlq3d9Jg_jELdQdcivr2wD4NP5dt1SVrGdE-JqYHiA6Tqr"/>
+</div>
+</div>
+<div class="space-y-4 pt-12">
+<div class="rounded-xl overflow-hidden shadow-sm">
+<img alt="Finished details" class="w-full aspect-[3/4] object-cover" data-alt="Extreme close-up of intricate sugar flowers with realistic textures and soft pastel gradients on a white cake surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnH9fGOZzBpYmbuIwse4NG2sW3lAuh7plBiH0QGkiOry9Yx7OvQGhssFr1Ck3i684t3SKyh-_c8gjDULiCKj_iwsqhPaNadEshmnspluHXWNJuicC2zjLfobm0zd_rd4_B-CaoQGL6x6gNaUgKF2xU_fVI9GwX5t1gmYD0hOaHg2gTaQktLXJDsv-cET7CousXdXn4bN43I5NkBKax06lH8Qmkpo1z6hj3m-h6lQ16zuD8vt3k0Cr1jiFQFwDaWPdelJk-2ZKyhTa6"/>
+</div>
+<div class="rounded-xl overflow-hidden shadow-sm">
+<img alt="Production process" class="w-full aspect-square object-cover" data-alt="Soft focus shot of a pastry chef dusting a cake with sugar, light catching the falling particles in a warm kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWiCmaMOse9swyuImqyGRTg39tVpe6ivMS-MGCWJdccaJL9kWS_VL4iTI_7fCa0ojVf-srBKqTEvTSe4V4T_r6A5PF-io6AeYyEepfhZz2iLIMYyZgq63aAsBtNEFOafX4vicHrRKotZ0aZW-9oOJbgoNsaq2_hnSqZssEbGTrXOCnrqgP0-qvUBMvRojwHhNXfucP8YEqRvNduR0-dZ9G4U8kUZxCzVLFD71vMbu6xzaeHUdkTqMz2vKdDMfmnCy7HmoPL7XWlY7n"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 text-center px-12">
+<h2 class="serif-headline text-3xl text-on-surface mb-8">Deseja um tema personalizado para seu evento?</h2>
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-label text-sm tracking-widest uppercase hover:bg-primary-dim transition-all duration-300 shadow-md">
+                SOLICITAR ORÇAMENTO
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f4f4f0] dark:bg-stone-950 w-full rounded-none">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 space-y-8 md:space-y-0 max-w-screen-2xl mx-auto">
+<span class="font-['Noto_Serif'] text-xl font-bold text-[#884f50]">Doces da Vika</span>
+<div class="flex space-x-8">
+<a class="font-['Plus_Jakarta_Sans'] text-sm tracking-widest uppercase text-stone-600 dark:text-stone-400 hover:text-[#884f50] transition-colors" href="#">Instagram</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm tracking-widest uppercase text-stone-600 dark:text-stone-400 hover:text-[#884f50] transition-colors" href="#">WhatsApp</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm tracking-widest uppercase text-stone-600 dark:text-stone-400 hover:text-[#884f50] transition-colors" href="#">Políticas</a>
+</div>
+<p class="font-['Plus_Jakarta_Sans'] text-sm tracking-widest uppercase text-stone-600 dark:text-stone-400">
+                © 2024 Doces da Vika. Crafted with Love.
+            </p>
+</div>
+</footer>
+</body></html>

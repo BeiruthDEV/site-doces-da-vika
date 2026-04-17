@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply w-full h-full m-0 p-0;
+  }
+
+  body {
+    @apply bg-surface text-on-surface font-body m-0 p-0 overflow-x-hidden w-full;
+  }
+
+  #root {
+    @apply w-full max-w-none m-0 p-0 overflow-x-hidden;
+  }
+
+  .serif-headline {
+    @apply font-headline;
+  }
+}
