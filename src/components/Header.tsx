@@ -3,8 +3,8 @@ import { navigation } from '../data/mockData';
 
 export const Header = () => {
   return (
-    <nav className="absolute top-0 w-full z-50 bg-transparent py-4">
-      <div className="flex items-center justify-between px-6 py-4 md:px-12 md:py-6 max-w-[1400px] mx-auto">
+    <nav className="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-2xl backdrop-saturate-200 border-b border-surface-container/50 transition-all duration-300">
+      <div className="flex items-center justify-between px-6 py-4 md:px-12 md:py-5 max-w-[1400px] mx-auto">
         <Link to="/" className="font-headline text-2xl italic font-bold text-primary">Viviane Beiruth</Link>
 
         <div className="hidden md:flex items-center space-x-8">

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { especialidades } from '../data/mockData';
-import { fadeUp, parallaxImage } from '../utils/animations';
+import { fadeUp, parallaxImage, imageTiltHover } from '../utils/animations';
 
 export const Specialties = () => {
   return (
@@ -39,7 +39,10 @@ export const Specialties = () => {
                 viewport={{ once: true, margin: "-100px" }}
                 variants={fadeUp}
               >
-                <div className="w-full h-full relative overflow-hidden bg-surface-container-low">
+                <motion.div 
+                  className="w-full h-full relative overflow-hidden bg-surface-container-low"
+                  whileHover={imageTiltHover}
+                >
                   <motion.img 
                     src={item.image} 
                     alt={item.title} 
@@ -49,7 +52,7 @@ export const Specialties = () => {
                     initial="hidden"
                     viewport={{ once: false, amount: 0.1 }}
                   />
-                </div>
+                </motion.div>
               </motion.div>
               
               {/* Text Side */}

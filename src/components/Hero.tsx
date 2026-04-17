@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { fadeUp, slowZoom, staggerContainer, textReveal } from '../utils/animations';
+import { fadeUp, slowZoom, staggerContainer, textReveal, floatContinuous } from '../utils/animations';
 
 export const Hero = () => {
   return (
@@ -45,7 +45,12 @@ export const Hero = () => {
           </motion.div>
         </motion.div>
         
-        <div className="md:col-span-6 relative h-[60vh] md:h-[85vh] mt-8 md:mt-0 overflow-hidden rounded-bl-none md:rounded-bl-[4rem]">
+        <motion.div 
+          className="md:col-span-6 relative h-[60vh] md:h-[85vh] mt-8 md:mt-0 overflow-hidden rounded-bl-none md:rounded-bl-[4rem]"
+          variants={floatContinuous}
+          initial="hidden"
+          animate="visible"
+        >
           <motion.div 
             className="absolute inset-0 w-full h-full"
             variants={slowZoom}
@@ -60,7 +65,7 @@ export const Hero = () => {
             {/* Soft gradient overlay for depth, avoiding complete dark chapado */}
             <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-40"></div>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
