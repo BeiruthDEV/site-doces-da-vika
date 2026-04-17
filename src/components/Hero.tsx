@@ -53,8 +53,8 @@ export const Hero = () => {
             animate="visible"
           >
             <img 
-              src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&q=80&w=1920" 
-              alt="Doces Artesanais finos" 
+              src="/images/flores-casamento.jpg" 
+              alt="Mesa de Doces Casamento Doces da Vika" 
               className="w-full h-full object-cover"
             />
             {/* Soft gradient overlay for depth, avoiding complete dark chapado */}
