@@ -12,7 +12,7 @@ export const especialidades = [
     id: 1,
     title: 'Bolos Esculturais',
     description: 'Obras de arte comestíveis. Design impecável em pasta americana e buttercream para casamentos e 15 anos.',
-    image: '/images/flores-casamento.jpg',
+    image: '/images/brownie-2.jpg',
     link: 'https://wa.me/5521000000000',
     linkText: 'Solicitar Orçamento',
   },
