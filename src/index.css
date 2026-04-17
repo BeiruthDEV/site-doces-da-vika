@@ -1,21 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html {
-    @apply w-full h-full m-0 p-0;
+    @apply w-full h-full m-0 p-0 scroll-smooth;
   }
 
   body {
-    @apply bg-surface text-on-surface font-body m-0 p-0 overflow-x-hidden w-full;
+    /* O bg-surface garante que o fundo deixe de ser branco puro */
+    @apply bg-surface text-on-surface font-body m-0 p-0 overflow-x-hidden w-full antialiased;
   }
 
   #root {
     @apply w-full max-w-none m-0 p-0 overflow-x-hidden;
-  }
-
-  .serif-headline {
-    @apply font-headline;
   }
 }
