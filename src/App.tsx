@@ -1,13 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { Specialties } from './components/Specialties';
-import { ThemesGallery } from './components/ThemesGallery';
 import { Footer } from './components/Footer';
-import { Sobre } from './components/Sobre';
-import { Menu } from './components/Menu';
-import { Orcamento } from './components/Orcamento';
-import { FAQ } from './components/FAQ';
+import { Home } from './pages/Home';
+import { ThemesGallery } from './pages/ThemesGallery';
+import { Sobre } from './pages/Sobre';
+import { Menu } from './pages/Menu';
+import { Orcamento } from './pages/Orcamento';
+import { FAQ } from './pages/FAQ';
 
 function App() {
   return (
@@ -16,12 +15,7 @@ function App() {
       
       <main className="flex-grow">
         <Routes>
-          <Route path="/" element={
-            <>
-              <Hero />
-              <Specialties />
-            </>
-          } />
+          <Route path="/" element={<Home />} />
           <Route path="/galeria" element={<ThemesGallery />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/menu" element={<Menu />} />
