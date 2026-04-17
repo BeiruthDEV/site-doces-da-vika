@@ -23,10 +23,10 @@ export const Hero = () => {
           <motion.div className="overflow-hidden mb-8">
             <motion.h1 
               variants={textReveal}
-              className="font-headline text-5xl md:text-7xl lg:text-[5.5rem] text-on-surface leading-[1.1] tracking-tight"
+              className="font-headline text-5xl md:text-7xl lg:text-[5.5rem] text-on-primary-fixed leading-[1.1] tracking-tight"
             >
               Adoçando <br />
-              <span className="italic text-primary font-normal">cenas</span> inesquecíveis.
+              <span className="italic text-secondary font-normal drop-shadow-sm">cenas</span> inesquecíveis.
             </motion.h1>
           </motion.div>
           
@@ -46,25 +46,29 @@ export const Hero = () => {
         </motion.div>
         
         <motion.div 
-          className="md:col-span-6 relative h-[60vh] md:h-[85vh] mt-8 md:mt-0 overflow-hidden rounded-bl-none md:rounded-bl-[4rem]"
+          className="md:col-span-6 relative h-[50vh] md:h-[75vh] mt-8 md:mt-0 flex items-center justify-center p-4 md:p-8"
           variants={floatContinuous}
           initial="hidden"
           animate="visible"
         >
-          <motion.div 
-            className="absolute inset-0 w-full h-full"
-            variants={slowZoom}
-            initial="hidden"
-            animate="visible"
-          >
-            <img 
-              src="/images/flores-casamento.jpg" 
-              alt="Mesa de Doces Casamento Doces da Vika" 
-              className="w-full h-full object-cover"
-            />
-            {/* Soft gradient overlay for depth, avoiding complete dark chapado */}
-            <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-40"></div>
-          </motion.div>
+          {/* Bento Box / Quadro de Luxo */}
+          <div className="w-full h-full relative rounded-[2.5rem] border-[1px] border-secondary p-2 md:p-3 bg-surface-container-low shadow-2xl shadow-primary/10">
+            <motion.div 
+              className="absolute inset-0 w-full h-full p-2 md:p-3"
+              variants={slowZoom}
+              initial="hidden"
+              animate="visible"
+            >
+              <div className="w-full h-full relative overflow-hidden rounded-[2rem]">
+                <img 
+                  src="/images/flores-casamento.jpg" 
+                  alt="Mesa de Doces Casamento Doces da Vika" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface/80 via-transparent to-transparent opacity-50"></div>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

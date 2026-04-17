@@ -14,11 +14,11 @@ export const Sobre = () => {
             animate="visible"
           >
             <motion.h2 
-              className="font-headline text-5xl md:text-7xl lg:text-[5.5rem] text-primary leading-[1.1] mb-8"
+              className="font-headline text-5xl md:text-7xl lg:text-[5.5rem] text-on-primary-fixed leading-[1.1] mb-8"
               variants={fadeUp}
             >
               Por trás da marca: <br />
-              <span className="italic font-normal">Viviane Beiruth</span>
+              <span className="italic font-normal text-secondary drop-shadow-sm">Viviane Beiruth</span>
             </motion.h2>
             <motion.p 
               className="text-lg text-on-surface-variant font-light max-w-md leading-relaxed font-body"
@@ -29,28 +29,32 @@ export const Sobre = () => {
           </motion.div>
           <div className="md:col-span-7 relative h-[70vh] w-full mt-12 md:mt-0">
             <motion.div 
-              className="absolute right-0 top-0 w-full md:w-[85%] h-full overflow-hidden"
+              className="absolute right-0 top-0 w-full md:w-[85%] h-full rounded-[2.5rem] border-[1px] border-secondary/40 bg-surface-container-low p-2 md:p-3 shadow-2xl"
               variants={slowZoom}
               initial="hidden"
               animate="visible"
             >
-              <img 
-                className="w-full h-full object-cover" 
-                alt="Viviane Beiruth banner de apresentação" 
-                src="/images/sobre-viviane.png" 
-              />
+              <div className="w-full h-full relative overflow-hidden rounded-[2rem]">
+                <img 
+                  className="w-full h-full object-cover" 
+                  alt="Viviane Beiruth banner de apresentação" 
+                  src="/images/sobre-viviane.png" 
+                />
+              </div>
             </motion.div>
             <motion.div 
-              className="absolute -bottom-16 left-0 md:-left-12 w-48 md:w-64 h-64 md:h-80 overflow-hidden shadow-2xl border-4 border-surface z-20"
+              className="absolute -bottom-16 left-0 md:-left-12 w-56 md:w-72 h-72 md:h-96 rounded-[2rem] border-[1px] border-secondary/60 bg-surface p-2 md:p-3 shadow-2xl z-20"
               variants={fadeUp}
               initial="hidden"
               animate="visible"
             >
-              <img 
-                className="w-full h-full object-cover" 
-                alt="Doces finos em fita rosa" 
-                src="/images/brownie-2.jpg" 
-              />
+              <div className="w-full h-full relative overflow-hidden rounded-[1.5rem]">
+                <img 
+                  className="w-full h-full object-cover" 
+                  alt="Doces finos em fita rosa" 
+                  src="/images/brownie-2.jpg" 
+                />
+              </div>
             </motion.div>
           </div>
         </div>

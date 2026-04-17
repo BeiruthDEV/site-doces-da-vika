@@ -53,16 +53,18 @@ export const ThemesGallery = () => {
                viewport={{ once: true, margin: "-100px" }}
                variants={fadeUp}
             >
-              <div className="w-full relative overflow-hidden bg-surface mb-8 aspect-[4/5]">
-                 <motion.img 
-                   src={item.image} 
-                   alt={item.title} 
-                   className="absolute inset-0 w-full h-[120%] object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" 
-                   variants={parallaxImage}
-                   whileInView="visible"
-                   initial="hidden"
-                   viewport={{ once: false, amount: 0.1 }}
-                 />
+              <div className="w-full relative bg-surface-container-low mb-8 aspect-[4/5] rounded-[2.5rem] border-[1px] border-secondary/30 p-2 md:p-3 shadow-2xl shadow-primary/5">
+                 <div className="w-full h-full relative overflow-hidden rounded-[2rem]">
+                   <motion.img 
+                     src={item.image} 
+                     alt={item.title} 
+                     className="absolute inset-0 w-full h-[120%] object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700" 
+                     variants={parallaxImage}
+                     whileInView="visible"
+                     initial="hidden"
+                     viewport={{ once: false, amount: 0.1 }}
+                   />
+                 </div>
               </div>
               <div className="flex items-center gap-6">
                 <span className="font-label text-xs tracking-widest text-primary uppercase">0{index + 1}</span>

@@ -39,20 +39,23 @@ export const Specialties = () => {
                 viewport={{ once: true, margin: "-100px" }}
                 variants={fadeUp}
               >
-                <motion.div 
-                  className="w-full h-full relative overflow-hidden bg-surface-container-low"
-                  whileHover={imageTiltHover}
-                >
-                  <motion.img 
-                    src={item.image} 
-                    alt={item.title} 
-                    className="absolute inset-0 w-full h-[120%] object-cover"
-                    variants={parallaxImage}
-                    whileInView="visible"
-                    initial="hidden"
-                    viewport={{ once: false, amount: 0.1 }}
-                  />
-                </motion.div>
+                {/* Lux Frame / Bento Box */}
+                <div className="w-full h-full relative p-2 md:p-3 rounded-[2.5rem] border-[1px] border-secondary/30 bg-surface-container-low shadow-xl shadow-primary/5">
+                  <motion.div 
+                    className="w-full h-full relative overflow-hidden rounded-[2rem]"
+                    whileHover={imageTiltHover}
+                  >
+                    <motion.img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="absolute inset-0 w-full h-[120%] object-cover"
+                      variants={parallaxImage}
+                      whileInView="visible"
+                      initial="hidden"
+                      viewport={{ once: false, amount: 0.1 }}
+                    />
+                  </motion.div>
+                </div>
               </motion.div>
               
               {/* Text Side */}
