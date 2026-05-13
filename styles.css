@@ -70,13 +70,42 @@ svg {
 
 .hero {
   position: relative;
-  width: 100%;
+  isolation: isolate;
+  width: 100vw;
+  min-height: 100vh;
+  min-height: max(760px, 100vh);
   height: 100dvh;
-  min-height: 750px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background: #c59bab;
+  background:
+    linear-gradient(115deg, #b58b9d 0%, #d5aebe 34%, #f1cbd6 58%, #c999ad 100%);
+  color: white;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero::before {
+  z-index: -7;
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255, 247, 249, 0.72) 0 11%, rgba(255, 211, 226, 0.48) 27%, transparent 49%),
+    radial-gradient(circle at 24% 18%, rgba(255, 242, 244, 0.38), transparent 32%),
+    radial-gradient(circle at 82% 24%, rgba(219, 165, 188, 0.28), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(133, 83, 107, 0.12));
+}
+
+.hero::after {
+  z-index: 6;
+  background:
+    linear-gradient(90deg, rgba(77, 48, 65, 0.13), transparent 18%, transparent 82%, rgba(88, 54, 72, 0.16)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 24%, rgba(79, 45, 62, 0.14));
+  mix-blend-mode: multiply;
 }
 
 .hero-atmosphere,
@@ -87,31 +116,108 @@ svg {
   pointer-events: none;
 }
 
+.hero-atmosphere {
+  z-index: -5;
+}
+
+.hero-blob,
 .hero-glow {
   position: absolute;
+  border-radius: 999px;
+  will-change: transform;
+}
+
+.hero-blob {
+  filter: blur(24px);
+  mix-blend-mode: screen;
+  opacity: 0.32;
+  animation: blob-drift 22s ease-in-out infinite alternate;
+}
+
+.hero-blob-left {
+  top: 8%;
+  left: -8%;
+  width: 34vw;
+  height: 34vw;
+  background:
+    radial-gradient(circle at 55% 45%, rgba(255, 235, 244, 0.78), rgba(229, 139, 179, 0.34) 45%, transparent 70%);
+}
+
+.hero-blob-right {
+  top: 4%;
+  right: -12%;
+  width: 36vw;
+  height: 42vw;
+  background:
+    radial-gradient(circle at 45% 45%, rgba(248, 210, 225, 0.66), rgba(156, 104, 139, 0.42) 52%, transparent 74%);
+  animation-delay: -6s;
+}
+
+.hero-blob-bottom {
+  left: 28%;
+  bottom: -18%;
+  width: 48vw;
+  height: 24vw;
+  background:
+    radial-gradient(ellipse at center, rgba(255, 220, 232, 0.55), rgba(173, 96, 133, 0.38) 55%, transparent 76%);
+  animation-delay: -11s;
+}
+
+.hero-glow {
   top: 50%;
   left: 50%;
-  width: 70vw;
-  height: 70vw;
-  max-width: 1000px;
-  max-height: 1000px;
+  z-index: -2;
+  width: 50vw;
+  height: 46vw;
+  max-width: 650px;
+  max-height: 600px;
   transform: translate(-50%, -50%);
-  border-radius: 999px;
-  background: #dcaec1;
-  filter: blur(100px);
-  opacity: 0.6;
-  mix-blend-mode: screen;
+  border-radius: 46% 54% 58% 42% / 44% 50% 50% 56%;
+  background:
+    radial-gradient(ellipse at 43% 36%, rgba(255, 244, 248, 0.78) 0 9%, rgba(250, 195, 218, 0.56) 34%, rgba(217, 119, 166, 0.2) 60%, transparent 74%);
+  filter: blur(8px);
+  opacity: 0.74;
+  box-shadow: 0 0 36px rgba(255, 224, 236, 0.26);
+  animation: glow-breathe 8s ease-in-out infinite;
+}
+
+.hero-stage {
+  position: absolute;
+  left: 50%;
+  bottom: 17.5vh;
+  z-index: -1;
+  width: min(760px, 58vw);
+  height: 23vh;
+  min-height: 130px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(ellipse at center, rgba(71, 39, 57, 0.32), rgba(111, 62, 88, 0.14) 45%, transparent 72%);
+  filter: blur(8px);
+  opacity: 0.58;
+}
+
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image:
+    radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.55) 0 1px, transparent 1.25px);
+  background-size: 42px 42px;
 }
 
 .hero-vignette {
-  background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.15) 100%);
+  z-index: 4;
+  background:
+    radial-gradient(ellipse at 50% 42%, transparent 0 38%, rgba(92, 57, 74, 0.12) 72%, rgba(62, 34, 50, 0.22) 100%);
 }
 
 .hero-header {
   position: relative;
-  z-index: 50;
+  z-index: 20;
   width: 100%;
-  padding: 2rem 1.5rem;
+  padding: clamp(1.25rem, 2.6vw, 2rem) clamp(1.25rem, 3.4vw, 3rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -119,10 +225,10 @@ svg {
 
 .brand-script {
   font-family: "Great Vibes", cursive;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  line-height: 1;
   color: white;
-  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
+  filter: drop-shadow(0 10px 18px rgba(58, 32, 48, 0.22));
 }
 
 .hero-nav {
@@ -132,12 +238,13 @@ svg {
 }
 
 .hero-nav a {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.86);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   transition: color 0.2s ease;
+  text-shadow: 0 8px 18px rgba(65, 36, 52, 0.24);
 }
 
 .hero-nav a:hover {
@@ -158,14 +265,15 @@ svg {
   align-items: center;
   justify-content: center;
   color: white;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  transition: background 0.2s ease;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 10px 22px rgba(76, 42, 61, 0.14);
+  transition: transform 0.25s ease, background 0.2s ease;
 }
 
 .bag-button:hover {
   background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
 }
 
 .bag-button svg {
@@ -182,16 +290,18 @@ svg {
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-  transition: background 0.2s ease;
+  box-shadow: 0 12px 26px rgba(84, 48, 66, 0.18), inset 0 -1px 0 rgba(174, 120, 146, 0.14);
+  transition: transform 0.25s ease, background 0.2s ease;
 }
 
 .menu-button:hover {
   background: #f9fafb;
+  transform: translateY(-1px);
 }
 
 .hero-main {
   position: relative;
+  z-index: 10;
   flex: 1;
   width: 100%;
   display: flex;
@@ -201,66 +311,76 @@ svg {
 
 .hero-title-wrap {
   position: absolute;
-  top: 50%;
+  top: 51%;
   left: 50%;
-  z-index: 10;
+  z-index: 1;
   width: 100%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  transform: translate(-50%, -55%);
+  transform: translate(-50%, -54%);
   pointer-events: none;
 }
 
 .hero-title-wrap h1 {
   margin: 0;
-  color: white;
+  color: rgba(255, 255, 255, 0.94);
   font-family: "Bebas Neue", sans-serif;
-  font-size: 28vw;
+  font-size: clamp(9rem, 25.8vw, 24rem);
   font-weight: 700;
   line-height: 0.8;
-  letter-spacing: 0;
+  letter-spacing: 0.018em;
   white-space: nowrap;
-  opacity: 0.95;
+  opacity: 0.98;
   user-select: none;
-  filter: drop-shadow(0 20px 13px rgba(0, 0, 0, 0.03)) drop-shadow(0 8px 5px rgba(0, 0, 0, 0.08));
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.3),
+    0 16px 26px rgba(86, 48, 67, 0.16);
 }
 
 .hero-product {
   position: relative;
-  z-index: 30;
-  margin-top: -8vh;
+  z-index: 9;
+  margin-top: -13vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: hero-rise 0.9s ease-out both;
 }
 
 .product-aura {
   position: absolute;
-  top: 50%;
+  top: 51%;
   left: 50%;
-  width: 45vw;
-  max-width: 550px;
+  z-index: -1;
+  width: min(51vw, 690px);
+  min-width: 390px;
+  max-width: 690px;
   aspect-ratio: 1;
-  transform: translate(-50%, -50%);
-  border-radius: 45% 55% 60% 40% / 40% 50% 60% 50%;
-  background: linear-gradient(to top right, #eaa8c3, #fadbe7);
-  filter: blur(2px);
-  opacity: 0.9;
-  box-shadow: 0 0 80px rgba(234, 168, 195, 0.4);
-  mix-blend-mode: overlay;
-  animation: spin 60s linear infinite;
+  transform: translate(-50%, -50%) rotate(-5deg);
+  border-radius: 47% 53% 56% 44% / 42% 46% 54% 58%;
+  background:
+    radial-gradient(circle at 36% 24%, rgba(255, 251, 252, 0.5), transparent 20%),
+    radial-gradient(circle at 62% 66%, rgba(211, 109, 159, 0.3), transparent 44%),
+    linear-gradient(145deg, rgba(255, 224, 233, 0.58), rgba(230, 139, 181, 0.36) 54%, rgba(199, 111, 153, 0.18));
+  filter: blur(0.5px);
+  opacity: 0.62;
+  box-shadow:
+    inset 10px 16px 26px rgba(255, 255, 255, 0.22),
+    inset -18px -18px 36px rgba(150, 78, 115, 0.12),
+    0 0 34px rgba(255, 228, 237, 0.26);
+  mix-blend-mode: screen;
 }
 
 .product-image {
   position: relative;
-  width: 40vw;
-  min-width: 280px;
-  max-width: 480px;
+  width: clamp(385px, 47vw, 680px);
+  min-width: 385px;
+  max-width: 680px;
   aspect-ratio: 3 / 4;
-  filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 38px 36px rgba(62, 32, 48, 0.32));
   transition: transform 0.7s ease-out;
 }
 
@@ -276,9 +396,9 @@ svg {
 
 .side-note {
   position: absolute;
-  right: 3rem;
-  top: 45%;
-  z-index: 20;
+  right: clamp(2rem, 5vw, 5rem);
+  top: 48%;
+  z-index: 11;
   display: none;
 }
 
@@ -293,8 +413,8 @@ svg {
 
 .hero-cta-line {
   position: absolute;
-  bottom: 22vh;
-  z-index: 40;
+  bottom: 21.5vh;
+  z-index: 12;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -308,7 +428,9 @@ svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background:
+    linear-gradient(to right, transparent, rgba(255, 255, 255, 0.64), transparent);
+  box-shadow: 0 1px 10px rgba(255, 255, 255, 0.12);
 }
 
 .black-cta {
@@ -317,15 +439,18 @@ svg {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2.5rem;
+  padding: 1rem 2.35rem;
   border-radius: 999px;
-  background: #111;
+  background: linear-gradient(180deg, #181316, #060506);
   color: white;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    0 12px 28px rgba(42, 22, 33, 0.34),
+    0 2px 0 rgba(255, 255, 255, 0.12) inset,
+    0 -8px 18px rgba(255, 190, 215, 0.06) inset;
   transition: transform 0.5s ease, background 0.5s ease;
 }
 
@@ -333,9 +458,10 @@ svg {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(101%);
-  transition: transform 0.3s ease-out;
+  background:
+    linear-gradient(105deg, transparent 0 28%, rgba(255, 255, 255, 0.2) 44%, transparent 60% 100%);
+  transform: translateX(-140%);
+  transition: transform 0.5s ease-out;
 }
 
 .black-cta span {
@@ -349,14 +475,14 @@ svg {
 }
 
 .black-cta:hover::after {
-  transform: translateY(0);
+  transform: translateX(140%);
 }
 
 .hero-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 30;
+  z-index: 12;
   width: 100%;
   height: 22vh;
   padding: 0 1.5rem 2rem;
@@ -368,25 +494,41 @@ svg {
 
 .quality-card {
   position: relative;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   display: none;
   pointer-events: auto;
 }
 
+.quality-card::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  bottom: 0.9rem;
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 48% 52% 46% 54%;
+  background:
+    radial-gradient(circle at 35% 32%, rgba(255, 255, 255, 0.92) 0 10%, transparent 11%),
+    radial-gradient(circle at 58% 52%, rgba(247, 142, 178, 0.5) 0 12%, transparent 13%),
+    linear-gradient(145deg, rgba(255, 226, 235, 0.42), rgba(191, 103, 143, 0.18));
+  opacity: 0.72;
+  pointer-events: none;
+}
+
 .star-badge {
   position: absolute;
-  top: -0.75rem;
-  left: 1.5rem;
-  z-index: 20;
+  top: -0.9rem;
+  left: 1.55rem;
+  z-index: 2;
   width: 2rem;
   height: 2rem;
   border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
-  color: #c59bab;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.94);
+  color: #b47a95;
+  box-shadow: 0 10px 20px rgba(68, 36, 53, 0.16);
   transition: transform 0.2s ease;
 }
 
@@ -401,13 +543,18 @@ svg {
 }
 
 .quality-box {
-  width: 190px;
-  padding: 2rem 1.5rem 1.5rem;
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(24px);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: clamp(178px, 15vw, 230px);
+  min-height: 136px;
+  padding: 2rem 1.45rem 1.35rem;
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background:
+    radial-gradient(circle at 82% 78%, rgba(255, 245, 248, 0.2) 0 12%, transparent 13%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.28), rgba(255, 228, 237, 0.13) 48%, rgba(133, 75, 101, 0.16)),
+    rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 16px 34px rgba(60, 32, 48, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
   transition: background 0.2s ease;
 }
 
@@ -416,28 +563,30 @@ svg {
 }
 
 .quality-box h3 {
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.35rem;
   color: white;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 3rem;
+  font-size: clamp(3rem, 5.1vw, 5rem);
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.1em;
 }
 
 .quality-box p {
+  max-width: 8.4rem;
   margin: 0;
   color: rgba(255, 255, 255, 0.8);
   font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.25em;
+  line-height: 1.45;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
 }
 
 .hero-copy {
   position: absolute;
   left: 50%;
-  bottom: 2rem;
+  bottom: 1.6rem;
   width: 100%;
   max-width: 28rem;
   margin-bottom: 0.5rem;
@@ -450,16 +599,16 @@ svg {
 .hero-copy h2 {
   margin: 0 0 0.5rem;
   color: white;
-  font-size: 1.125rem;
+  font-size: clamp(1.05rem, 1.45vw, 1.55rem);
   font-weight: 500;
   line-height: 1.75rem;
-  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
+  text-shadow: 0 8px 16px rgba(60, 32, 48, 0.2);
 }
 
 .hero-copy p {
   max-width: 20rem;
   margin: 0 auto;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.74);
   font-size: 11px;
   font-weight: 300;
   line-height: 1.625;
@@ -467,10 +616,10 @@ svg {
 
 .portrait {
   position: absolute;
-  right: 1.5rem;
+  right: clamp(-0.75rem, 1.7vw, 1.4rem);
   bottom: 0;
-  width: 200px;
-  height: 280px;
+  width: clamp(170px, 18vw, 270px);
+  height: clamp(245px, 29vw, 380px);
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -482,8 +631,8 @@ svg {
   height: 100%;
   object-fit: contain;
   object-position: bottom;
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.35));
-  mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  filter: drop-shadow(0 20px 26px rgba(47, 24, 38, 0.22));
+  mask-image: linear-gradient(to bottom, black 56%, rgba(0, 0, 0, 0.82) 76%, transparent 100%);
 }
 
 .section {
@@ -544,11 +693,12 @@ svg {
   background: var(--card);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .gallery-card:hover {
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 .gallery-card img {
@@ -614,11 +764,12 @@ svg {
   background: var(--card);
   text-align: center;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .feature-card:hover {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 .icon-circle {
@@ -740,7 +891,7 @@ svg {
   position: absolute;
   border-radius: 999px;
   background: white;
-  filter: blur(64px);
+  filter: blur(28px);
 }
 
 .cta-decor div:first-child {
@@ -798,7 +949,7 @@ svg {
   border-radius: 0.75rem;
   font-size: 1rem;
   font-weight: 500;
-  transition: background 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .contact-button svg {
@@ -816,6 +967,7 @@ svg {
 .whatsapp:hover {
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
 .phone {
@@ -918,9 +1070,38 @@ svg {
   transition-delay: 0.5s;
 }
 
-@keyframes spin {
+@keyframes blob-drift {
+  from {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+  }
+
   to {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: translate3d(3%, 2%, 0) scale(1.08);
+  }
+}
+
+@keyframes glow-breathe {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.88;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0.92;
+    transform: translateY(28px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -943,16 +1124,6 @@ svg {
 }
 
 @media (min-width: 768px) {
-  .hero-header {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
-  .brand-script {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-
   .hero-nav {
     display: flex;
   }
@@ -964,12 +1135,6 @@ svg {
 
   .quality-card {
     display: block;
-  }
-
-  .portrait {
-    right: 3rem;
-    width: 280px;
-    height: 380px;
   }
 
   .section {
@@ -1046,34 +1211,101 @@ svg {
 
 @media (max-width: 520px) {
   .hero {
-    min-height: 700px;
+    min-height: 720px;
+    height: 100svh;
   }
 
   .brand-script {
-    font-size: 1.65rem;
+    font-size: 1.55rem;
   }
 
   .hero-header {
-    padding: 1.5rem 1rem;
+    padding: 1.35rem 0.9rem;
+  }
+
+  .hero-actions {
+    position: fixed;
+    top: 1.25rem;
+    right: 0.9rem;
+    z-index: 60;
+    gap: 0.65rem;
   }
 
   .menu-button {
-    padding: 0.7rem 1.25rem;
+    display: none;
+  }
+
+  .bag-button {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .hero-title-wrap {
+    top: 48%;
   }
 
   .hero-title-wrap h1 {
-    font-size: 33vw;
+    font-size: 39vw;
+    opacity: 0.58;
+    text-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.22),
+      0 20px 30px rgba(66, 34, 52, 0.18);
+  }
+
+  .hero-product {
+    margin-top: -25vh;
+  }
+
+  .hero-glow {
+    width: 100vw;
+    height: 88vw;
+  }
+
+  .product-aura {
+    min-width: 350px;
+    width: 102vw;
+    opacity: 0.52;
   }
 
   .product-image {
-    min-width: 245px;
-    width: 58vw;
+    min-width: 350px;
+    width: 94vw;
+    filter: drop-shadow(0 28px 30px rgba(62, 32, 48, 0.28));
+  }
+
+  .hero-cta-line {
+    bottom: 24.5vh;
+  }
+
+  .hero-copy {
+    bottom: 4.4rem;
+    padding: 0 1rem;
+  }
+
+  .hero-copy p {
+    display: none;
   }
 
   .portrait {
-    right: 0.5rem;
-    width: 165px;
-    height: 240px;
+    right: -3.2rem;
+    width: 138px;
+    height: 210px;
+  }
+
+  .hero-blob-left {
+    width: 62vw;
+    height: 62vw;
+  }
+
+  .hero-blob-right {
+    width: 68vw;
+    height: 72vw;
+  }
+
+  .hero-blob-bottom {
+    left: 0;
+    width: 82vw;
+    height: 42vw;
   }
 
   .black-cta {
